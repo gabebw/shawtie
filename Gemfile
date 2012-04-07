@@ -3,7 +3,8 @@ source :rubygems
 gem 'sinatra', '~> 1.3.2'
 gem 'redis', '~> 2.2.2'
 gem 'rake', '~> 0.9.2'
-gem 'ohm', '~> 0.1.5'
+gem 'ohm', '~> 1.0.0.rc1'
+gem 'ohm-contrib', '~> 1.0.0.rc2'
 
 group :test do
   gem 'rack-test'

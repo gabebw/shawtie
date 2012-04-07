@@ -1,11 +1,26 @@
+require_relative '../../lib/encoder'
+
 class Link < Ohm::Model
+  include Ohm::Callbacks
+
   attribute :url
   attribute :hash
 
+  index :url
   index :hash
 
   def validate
     assert_present :url
-    assert_present :hash
+  end
+
+  protected
+
+  def after_create
+    set_hash
+  end
+
+  def set_hash
+    self.hash = Encoder.new(self.id.to_i).encode
+    save
   end
 end
