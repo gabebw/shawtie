@@ -5,6 +5,7 @@ gem 'redis', '~> 2.2.2'
 gem 'rake', '~> 0.9.2'
 gem 'ohm', '~> 1.0.0.rc1'
 gem 'ohm-contrib', '~> 1.0.0.rc2'
+gem 'thin'
 
 group :test do
   gem 'rack-test'
