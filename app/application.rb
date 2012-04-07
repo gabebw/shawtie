@@ -1,8 +1,6 @@
 require 'bundler/setup'
 require 'sinatra/base'
 
-require_relative '../lib/encoder'
-require_relative '../lib/decoder'
 require_relative '../lib/ohm_setup'
 require_relative 'models/link'
 
@@ -12,6 +10,11 @@ module Shawtie
       link = Link.find(hash: hash).first
 
       redirect link.url
+    end
+
+    post '/' do
+      url = params[:url]
+      Link.create(url: url)
     end
   end
 end
