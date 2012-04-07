@@ -1,12 +1,12 @@
 # http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener
 class Decoder
-  def initialize(id)
-    @id = id
+  def initialize(hash)
+    @hash = hash
   end
 
   def decode
     sum = 0
-    @id.split('').map do |chunk|
+    @hash.split('').map do |chunk|
       Encoder::CHARS.index(chunk)
     end.reverse.each_with_index do |chunk, i|
       sum += chunk * Encoder::BASE ** i
