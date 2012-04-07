@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'rspec'
 require 'rack/test'
 require 'factory_girl'
+require 'turnip/capybara'
 
 require_relative '../app/application'
 

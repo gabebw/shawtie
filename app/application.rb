@@ -6,6 +6,10 @@ require_relative 'models/link'
 
 module Shawtie
   class Application < Sinatra::Base
+    get '/' do
+      erb :index
+    end
+
     get '/:hash' do |hash|
       link = Link.find(hash: hash).first
 
@@ -14,7 +18,9 @@ module Shawtie
 
     post '/' do
       url = params[:url]
-      Link.create(url: url)
+      link = Link.create(url: url)
+      shortened_url =  URI.join("http://#{request.host_with_port}", link.hash)
+      erb :show, locals: { url: shortened_url }
     end
   end
 end
