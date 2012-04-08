@@ -2,7 +2,7 @@
 class Encoder
   CHARS = ('a'..'z').to_a +
           ('A'..'Z').to_a +
-          (0..9).to_a.map(&:to_s)
+          ('0'..'9').to_a
   BASE = CHARS.size
 
   def initialize(id)
