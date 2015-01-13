@@ -4,7 +4,7 @@ describe Link do
   context 'validations' do
     it 'requires url to be present' do
       link = Link.new(url: nil)
-      link.valid?
+      link.validate
       link.errors[:url].should include :not_present
     end
   end
