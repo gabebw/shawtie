@@ -9,10 +9,6 @@ class Link < Ohm::Model
   index :url
   index :hash
 
-  def validate
-    assert_present :url
-  end
-
   protected
 
   def after_create

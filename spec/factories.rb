@@ -4,6 +4,6 @@ FactoryGirl.define do
       url 'http://example.com'
     end
 
-    initialize_with { Link.new(url: url) }
+    initialize_with { Link.create(url: url) }
   end
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Shawtie::Application do
   context 'GET /:hash' do
-    let!(:link) { FactoryGirl.create(:link) }
+    let!(:link) { FactoryGirl.build(:link) }
 
     before do
       get "/#{link.hash}"

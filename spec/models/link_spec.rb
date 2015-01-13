@@ -1,22 +1,14 @@
 require 'spec_helper'
 
 describe Link do
-  context 'validations' do
-    it 'requires url to be present' do
-      link = Link.new(url: nil)
-      link.validate
-      link.errors[:url].should include :not_present
-    end
-  end
-
   context 'callbacks' do
     it 'sets hash after create' do
-      link = FactoryGirl.create(:link)
+      link = FactoryGirl.build(:link)
       link.hash.should == 'b'
     end
 
     it 'persists hash after create' do
-      link = FactoryGirl.create(:link)
+      link = FactoryGirl.build(:link)
       Link.find(hash: link.hash).should_not be_empty
     end
   end
