@@ -1,22 +1,22 @@
-require 'bundler/setup'
-require 'sinatra/base'
+require "bundler/setup"
+require "sinatra/base"
 
-require_relative '../lib/ohm_setup'
-require_relative 'models/link'
+require_relative "../lib/ohm_setup"
+require_relative "models/link"
 
 module Shawtie
   class Application < Sinatra::Base
-    get '/' do
+    get "/" do
       erb :index
     end
 
-    get '/:hash' do |hash|
+    get "/:hash" do |hash|
       link = Link.find(hash: hash).first
 
       redirect link.url
     end
 
-    post '/' do
+    post "/" do
       url = params[:url]
 
       if url != nil && url != ""

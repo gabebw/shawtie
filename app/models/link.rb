@@ -1,4 +1,4 @@
-require_relative '../../lib/encoder'
+require_relative "../../lib/encoder"
 
 class Link < Ohm::Model
   include Ohm::Callbacks

@@ -1,8 +1,8 @@
 # http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener
 class Encoder
-  CHARS = ('a'..'z').to_a +
-          ('A'..'Z').to_a +
-          ('0'..'9').to_a
+  CHARS = ("a".."z").to_a +
+          ("A".."Z").to_a +
+          ("0".."9").to_a
   BASE = CHARS.size
 
   def initialize(id)

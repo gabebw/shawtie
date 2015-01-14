@@ -1,3 +1,3 @@
-require './app/application'
+require "./app/application"
 
 run Shawtie::Application
