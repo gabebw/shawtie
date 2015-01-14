@@ -1,6 +1,6 @@
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-  config.before(:each, type: :request) do
+  config.before(:each, type: :feature) do
     Capybara.app = app
   end
 

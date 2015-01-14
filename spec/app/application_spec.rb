@@ -9,11 +9,11 @@ describe Shawtie::Application do
     end
 
     it 'is a redirect' do
-      last_response.should be_redirect
+      expect(last_response).to be_redirect
     end
 
     it 'redirects to the URL' do
-      last_response.location.should == link.url
+      expect(last_response.location).to eq link.url
     end
   end
 
@@ -25,11 +25,11 @@ describe Shawtie::Application do
     end
 
     it 'is successful' do
-      last_response.should be_successful
+      expect(last_response).to be_successful
     end
 
     it 'creates a link with the given url' do
-      Link.find(url: url).size.should == 1
+      expect(Link.find(url: url).size).to eq 1
     end
   end
 end

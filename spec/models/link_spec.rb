@@ -4,26 +4,28 @@ describe Link do
   context 'callbacks' do
     it 'sets hash after create' do
       link = FactoryGirl.build(:link)
-      link.hash.should == 'b'
+
+      expect(link.hash).to eq 'b'
     end
 
     it 'persists hash after create' do
       link = FactoryGirl.build(:link)
-      Link.find(hash: link.hash).should_not be_empty
+
+      expect(Link.find(hash: link.hash)).not_to be_empty
     end
   end
 
   context 'indexes' do
     it 'has an index on url' do
-      lambda do
+      expect {
         Link.find(url: 'whatever')
-      end.should_not raise_error(Ohm::IndexNotFound)
+      }.not_to raise_error
     end
 
     it 'has an index on hash' do
-      lambda do
+      expect {
         Link.find(hash: 'whatever')
-      end.should_not raise_error(Ohm::IndexNotFound)
+      }.not_to raise_error
     end
   end
 end

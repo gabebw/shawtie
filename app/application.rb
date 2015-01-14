@@ -18,9 +18,15 @@ module Shawtie
 
     post '/' do
       url = params[:url]
-      link = Link.create(url: url)
-      shortened_url =  URI.join("http://#{request.host_with_port}", link.hash)
-      erb :show, locals: { url: shortened_url }
+
+      if url != nil && url != ""
+        link = Link.create(url: url)
+        shortened_url =  URI.join("http://#{request.host_with_port}", link.hash)
+        erb :show, locals: { url: shortened_url }
+      else
+        @flash = "[You need to give a URL to shorten!]"
+        erb :index
+      end
     end
   end
 end
