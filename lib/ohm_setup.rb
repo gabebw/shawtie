@@ -1,6 +1,6 @@
 require "ohm"
 require "ohm/contrib"
 
-if ENV["REDISTOGO_URL"]
-  Ohm.redis = Redic.new(ENV["REDISTOGO_URL"])
+if ENV["REDIS_URL"]
+  Ohm.redis = Redic.new(ENV["REDIS_URL"])
 end
