@@ -1,3 +1,13 @@
-<p>
-  Shortened URL: <%= url %>
-</p>
+<% if @link %>
+  <p>
+    Cool! You can now copy and paste
+
+    <a href="http://<%= @host %>/<%= @link.hash %>">
+      http://<%= @host %>/<%= @link.hash %>
+    </a>
+    and it will link to
+    <a href="<%= @link.url %>"><%= @link.url %></a> :)
+  </p>
+<% else %>
+  <p>No link found. Sorry about that.</p>
+<% end %>

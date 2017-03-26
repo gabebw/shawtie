@@ -5,7 +5,7 @@ feature "User creates a link" do
     scenario "shows them the shortened link" do
       visit "/"
       fill_in "URL", with: "http://example.com"
-      click_button "Submit"
+      click_button "Shorten this URL"
 
       expect(page).to have_latest_link
     end
@@ -14,9 +14,9 @@ feature "User creates a link" do
   context "without a URL" do
     it "shows them an error message" do
       visit "/"
-      click_button "Submit"
+      click_button "Shorten this URL"
 
-      expect(page).to have_content "[You need to give a URL to shorten!]"
+      expect(page).to have_content "You need to give a URL to shorten!"
     end
   end
 

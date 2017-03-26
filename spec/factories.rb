@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :link do
-    ignore do
+    transient do
       url "http://example.com"
     end
 

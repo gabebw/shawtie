@@ -1,4 +1,4 @@
-require_relative "../../lib/encoder"
+require "securerandom"
 
 class Link < Ohm::Model
   include Ohm::Callbacks
@@ -16,7 +16,7 @@ class Link < Ohm::Model
   end
 
   def set_hash
-    self.hash = Encoder.new(self.id.to_i).encode
+    self.hash = SecureRandom.urlsafe_base64(8)
     save
   end
 end

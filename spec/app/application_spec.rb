@@ -25,7 +25,7 @@ describe Shawtie::Application do
     end
 
     it "is successful" do
-      expect(last_response).to be_successful
+      expect(last_response.headers["Location"]).to include "/show/"
     end
 
     it "creates a link with the given url" do

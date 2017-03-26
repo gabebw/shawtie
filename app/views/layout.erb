@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <title>Shawtie, the link shortener</title>
+  <head>
+    <title>A link shortener</title>
+    <link rel="stylesheet" type="text/css" href="/application.css">
+  </head>
   <body>
-    <%= yield %>
+    <div id="container">
+      <% if session[:error] %>
+        <div id="flash">
+          <div class="flash error"><%= session[:error] %></div>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

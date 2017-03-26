@@ -3,9 +3,10 @@ require "spec_helper"
 describe Link do
   context "callbacks" do
     it "sets hash after create" do
+      allow(SecureRandom).to receive(:urlsafe_base64).and_return("hash")
       link = FactoryGirl.build(:link)
 
-      expect(link.hash).to eq "b"
+      expect(link.hash).to eq "hash"
     end
 
     it "persists hash after create" do
