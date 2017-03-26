@@ -7,7 +7,6 @@ gem "ohm-contrib"
 gem "rake"
 gem "redis"
 gem "sinatra"
-gem "thin"
 
 group :development do
   gem "shotgun"
