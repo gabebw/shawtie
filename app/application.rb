@@ -20,7 +20,7 @@ module Shawtie
     end
 
     get "/application.css" do
-      File.read(File.join("public", "index.html"))
+      scss :application
     end
 
     get "/show/:hash" do |hash|

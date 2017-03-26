@@ -1,0 +1,31 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  margin-top: 3em;
+  margin-left: 25%;
+  width: 25%;
+}
+
+#flash {
+  margin-bottom: 1em;
+}
+
+.flash {
+  width: 100%;
+  padding: 1em;
+}
+
+.flash.info {
+  background-color: #77dd77;
+}
+
+.flash.warning {
+  background-color: #fdfd96;
+}
+
+.flash.error {
+  background-color: #ff6961;
+}

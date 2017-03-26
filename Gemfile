@@ -7,6 +7,7 @@ gem "ohm-contrib"
 gem "rake"
 gem "redis"
 gem "sinatra"
+gem "sass"
 
 group :development do
   gem "shotgun"
